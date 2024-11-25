@@ -1,0 +1,80 @@
+---
+import AngularIcon from "./AngularIcon.astro";
+import AWSIcon from "./AWSIcon.astro";
+import CodeigniterIcon from "./CodeigniterIcon.astro";
+import CSSIcon from "./CSSIcon.astro";
+import DartIcon from "./DartIcon.astro";
+import DjangoIcon from "./DjangoIcon.astro";
+import DockerIcon from "./DockerIcon.astro";
+import FastAPIIcon from "./FastAPIIcon.astro";
+import FigmaIcon from "./FigmaIcon.astro";
+import FirebaseIcon from "./FirebaseIcon.astro";
+import FlutterIcon from "./FlutterIcon.astro";
+import GoIcon from "./GoIcon.astro";
+import JSIcon from "./JSIcon.astro";
+import KafkaIcon from "./KafkaIcon.astro";
+import KubernetesIcon from "./KubernetesIcon.astro";
+import LaravelIcon from "./LaravelIcon.astro";
+import LinuxIcon from "./LinuxIcon.astro";
+import MongoDBIcon from "./MongoDBIcon.astro";
+import MySQLIcon from "./MySQLIcon.astro";
+import NestjsIcon from "./NestjsIcon.astro";
+import NextJSIcon from "./NextJSIcon.astro";
+import NginxIcon from "./NginxIcon.astro";
+import NodeJsIcon from "./NodeJsIcon.astro";
+import PHPIcon from "./PHPIcon.astro";
+import PostgreSQLIcon from "./PostgreSQLIcon.astro";
+import PythonIcon from "./PythonIcon.astro";
+import ReactIcon from "./ReactIcon.astro";
+import RedisIcon from "./RedisIcon.astro";
+import SCSSIcon from "./SCSSIcon.astro";
+import ShopifyIcon from "./ShopifyIcon.astro";
+import SupabaseIcon from "./SupabaseIcon.astro";
+import TailwindIcon from "./TailwindIcon.astro";
+import TypeScriptIcon from "./TypeScriptIcon.astro";
+import VueIcon from "./VueIcon.astro";
+import WordPressIcon from "./WordPressIcon.astro";
+
+interface Props {
+  icon: string;
+  size?: number;
+}
+
+const { icon, size = 100 } = Astro.props;
+---
+
+{icon == "go" && <GoIcon size={size} />}
+{icon == "js" && <JSIcon size={size} />}
+{icon == "typescript" && <TypeScriptIcon size={size} />}
+{icon == "python" && <PythonIcon size={size} />}
+{icon == "php" && <PHPIcon size={size} />}
+{icon == "dart" && <DartIcon size={size} />}
+{icon == "laravel" && <LaravelIcon size={size} />}
+{icon == "nestjs" && <NestjsIcon size={size} />}
+{icon == "flutter" && <FlutterIcon size={size} />}
+{icon == "tailwind" && <TailwindIcon size={size} />}
+{icon == "django" && <DjangoIcon size={size} />}
+{icon == "mongo" && <MongoDBIcon size={size} />}
+{icon == "node" && <NodeJsIcon size={size} />}
+{icon == "vue" && <VueIcon size={size} />}
+{icon == "angular" && <AngularIcon size={size} />}
+{icon == "redis" && <RedisIcon size={size} />}
+{icon == "postgresql" && <PostgreSQLIcon size={size} />}
+{icon == "mysql" && <MySQLIcon size={size} />}
+{icon == "kafka" && <KafkaIcon size={size} />}
+{icon == "docker" && <DockerIcon size={size} />}
+{icon == "figma" && <FigmaIcon size={size} />}
+{icon == "k8s" && <KubernetesIcon size={size} />}
+{icon == "aws" && <AWSIcon size={size} />}
+{icon == "nginx" && <NginxIcon size={size} />}
+{icon == "wordpress" && <WordPressIcon size={size} />}
+{icon == "scss" && <SCSSIcon size={size} />}
+{icon == "css" && <CSSIcon size={size} />}
+{icon == "linux" && <LinuxIcon size={size} />}
+{icon == "codeigniter" && <CodeigniterIcon size={size} />}
+{icon == "shopify" && <ShopifyIcon size={size} />}
+{icon == "firebase" && <FirebaseIcon size={size} />}
+{icon == "fastapi" && <FastAPIIcon size={size} />}
+{icon == "supabase" && <SupabaseIcon size={size} />}
+{icon == "react" && <ReactIcon size={size} />}
+{icon == "nextjs" && <NextJSIcon size={size} />}

@@ -1,0 +1,19 @@
+---
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<div class="bg-brand-green text-brand-light px-5">
+  <h2 class="font-hornbill text-4xl text-center mb-5">
+    • <br />
+    {t("education.title")}
+  </h2>
+  <p class="mb-4">
+    {t("education.firstParagraph")}
+  </p>
+  <p>
+    {t("education.secondParagraph")}
+  </p>
+</div>

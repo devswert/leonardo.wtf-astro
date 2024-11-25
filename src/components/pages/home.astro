@@ -1,0 +1,53 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import PresentationSection from "../sections/Presentation.astro";
+import AboutMeSection from "../sections/AboutMe.astro";
+import EducationSection from "../sections/Education.astro";
+import NoTechThingsSection from "../sections/NoTechThings.astro";
+import ProfessionalExperienceSection from "../sections/ProfessionalExperience.astro";
+import WaveContainer from "../WaveContainer.tsx";
+import Footer from "../Footer.astro";
+import LangSwitch from "../LangSwitch.astro";
+---
+
+<Layout title="Leonardo Manríquez • Software Engineer">
+  <main>
+    <!-- Presentation -->
+    <section class="container max-w-7xl mx-auto relative">
+      <div class="right-5 top-5 absolute z-10">
+        <LangSwitch />
+      </div>
+      <PresentationSection />
+    </section>
+
+    <!-- About Me -->
+    <WaveContainer color="#306564" client:load>
+      <div class="bg-brand-green">
+        <section class="container max-w-5xl mx-auto">
+          <AboutMeSection />
+        </section>
+      </div>
+    </WaveContainer>
+
+    <!-- Professional Experience -->
+    <section class="container max-w-5xl mx-auto">
+      <ProfessionalExperienceSection />
+    </section>
+
+    <!-- Education -->
+    <WaveContainer color="#306564" client:load>
+      <div class="bg-brand-green">
+        <section class="container max-w-5xl mx-auto">
+          <EducationSection />
+        </section>
+      </div>
+    </WaveContainer>
+
+    <!-- No Tech Things -->
+    <section class="container max-w-7xl mx-auto">
+      <NoTechThingsSection />
+    </section>
+
+    <Footer />
+  </main>
+</Layout>

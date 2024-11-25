@@ -1,0 +1,51 @@
+---
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+import BrandIcon from "../icons/BrandIcon.astro";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<div class="bg-brand-green text-brand-light px-5 md:mx-auto">
+  <h2 class="font-hornbill text-4xl text-center mb-5">
+    • <br />
+    {t("aboutMe.title")}
+  </h2>
+
+  <p class="mb-4">{t("aboutMe.firstParagraph")}</p>
+  <p class="mb-4">{t("aboutMe.secondParagraph")}</p>
+  <p class="mb-4">{t("aboutMe.someTools")}</p>
+
+  <div class="flex flex-wrap gap-4 justify-center py-3">
+    <BrandIcon icon="go" size={50} />
+    <BrandIcon icon="js" size={50} />
+    <BrandIcon icon="typescript" size={50} />
+    <BrandIcon icon="php" size={50} />
+    <BrandIcon icon="python" size={50} />
+    <BrandIcon icon="dart" size={50} />
+    <BrandIcon icon="laravel" size={50} />
+    <BrandIcon icon="nestjs" size={50} />
+    <BrandIcon icon="nextjs" size={50} />
+    <BrandIcon icon="flutter" size={50} />
+    <BrandIcon icon="css" size={50} />
+    <BrandIcon icon="tailwind" size={50} />
+    <BrandIcon icon="fastapi" size={50} />
+    <BrandIcon icon="django" size={50} />
+    <BrandIcon icon="mongo" size={50} />
+    <BrandIcon icon="node" size={50} />
+    <BrandIcon icon="vue" size={50} />
+    <BrandIcon icon="react" size={50} />
+    <BrandIcon icon="angular" size={50} />
+    <BrandIcon icon="redis" size={50} />
+    <BrandIcon icon="postgresql" size={50} />
+    <BrandIcon icon="mysql" size={50} />
+    <BrandIcon icon="kafka" size={50} />
+    <BrandIcon icon="docker" size={50} />
+    <BrandIcon icon="linux" size={50} />
+    <BrandIcon icon="figma" size={50} />
+    <BrandIcon icon="k8s" size={50} />
+    <BrandIcon icon="aws" size={50} />
+    <BrandIcon icon="firebase" size={50} />
+    <BrandIcon icon="supabase" size={50} />
+  </div>
+</div>

@@ -1,0 +1,41 @@
+---
+import { getImage } from "astro:assets";
+const rawImages = (await Astro.glob("../../assets/images/*.jpg")).sort(
+  (a, b) => {
+    const regex = /(\d+).jpg/;
+    const aNumber = parseInt(a.default.src.match(regex)[1]);
+    const bNumber = parseInt(b.default.src.match(regex)[1]);
+    return aNumber - bNumber;
+  },
+);
+
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+import BurbleShape from "../BurbleShape";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const images: Array<string> = await Promise.all(
+  rawImages.slice(4).map(async (i) => {
+    const img = await getImage({ src: i.default, format: "jpeg" });
+    return img.src;
+  }),
+);
+---
+
+<div class="text-brand-green px-5">
+  <h2 class="font-hornbill text-4xl text-center mb-5 z-10">
+    • <br />
+    {t("noTechThings.title")}
+  </h2>
+
+  <div class="flex flex-col md:flex-row items-center">
+    <div class="z-0 max-w-lg w-full md:w-1/2 md:max-w-full">
+      <BurbleShape images={images} randomOrder={true} client:only="react" />
+    </div>
+
+    <p class="font-sora z-10 md:w-1/3 md:text-left">
+      {t("noTechThings.firstParagraph")}
+    </p>
+  </div>
+</div>

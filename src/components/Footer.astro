@@ -1,0 +1,24 @@
+---
+import HeartIcon from "./icons/HeartIcon.astro";
+import LangSwitch from "./LangSwitch.astro";
+---
+
+<div class="flex flex-row gap-2 w-full justify-center items-center py-10">
+  <div class="flex flex-row gap-2 justify-center font-hornbill">
+    <a
+      target="_blank"
+      href="https://github.com/devswert/leonardo.wtf-astro"
+      class="flex flex-row items-center underline"
+    >
+      coded
+    </a>
+
+    with
+
+    <HeartIcon size={20} color={"#ED8733"} />
+  </div>
+
+  <span>•</span>
+
+  <LangSwitch />
+</div>

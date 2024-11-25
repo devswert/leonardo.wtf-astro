@@ -1,0 +1,85 @@
+---
+import { getImage } from "astro:assets";
+const rawImages = (await Astro.glob("../../assets/images/*.jpg")).sort(
+  (a, b) => {
+    const regex = /(\d+).jpg/;
+    const aNumber = parseInt(a.default.src.match(regex)[1]);
+    const bNumber = parseInt(b.default.src.match(regex)[1]);
+    return aNumber - bNumber;
+  },
+);
+
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+import ArrowIcon from "../icons/ArrowIcon.astro";
+import EmailIcon from "../icons/EmailIcon.astro";
+import LinkedInIcon from "../icons/LinkedInIcon.astro";
+import GitHubIcon from "../icons/GitHubIcon.astro";
+import BurbleShape from "../BurbleShape.tsx";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const images: Array<string> = await Promise.all(
+  rawImages.slice(0, 5).map(async (i) => {
+    const img = await getImage({ src: i.default, format: "jpeg" });
+    return img.src;
+  }),
+);
+---
+
+<div
+  class="relative h-96 overflow-hidden flex items-center md:h-auto md:justify-center"
+>
+  <h1
+    class="font-hornbill text-7xl z-10 sm:my-40 relative ml-5 sm:text-7xl md:text-8xl md:text-right"
+  >
+    <span class="sm:hidden">{t("presentation.shortHey")}</span>
+    <span class="hidden sm:inline">{t("presentation.longHey")}</span>
+    <br />
+    {t("presentation.myName")}
+  </h1>
+
+  <div
+    class="-top-14 -right-20 z-0 max-w-lg opacity-40 absolute w-full md:w-1/2 md:relative md:max-w-full md:opacity-100 md:right-0 md:top-0"
+  >
+    <BurbleShape images={images} randomOrder={true} client:only="react" />
+  </div>
+</div>
+
+<div
+  class="text-xl font-medium text-center mb-10 mx-5 max-w-3xl flex flex-col gap-8 md:mx-auto"
+>
+  <p>{t("presentation.summary")}</p>
+
+  <a
+    href={`/cv_${lang}.pdf`}
+    class="flex flex-row items-center gap-2 border-2 border-brand-green rounded mx-auto px-4 py-2 bg-brand-green-light transition-all hover:scale-110"
+  >
+    {t("presentation.checkMyCVButton")}
+    <ArrowIcon size={20} classes={"animate-bounce-horizontal"} />
+  </a>
+
+  <div class="flex flex-row gap-4 mx-auto">
+    <a
+      aria-label={`${t("presentation.linksLabels.email")}`}
+      href="email:leo.david.mm@gmail.com"
+      class="p-3 rounded-full border-2 border-brand-green transition-all hover:bg-brand-green-light"
+    >
+      <EmailIcon size={20} />
+    </a>
+    <a
+      aria-label={`${t("presentation.linksLabels.linkedin")}`}
+      href="https://linkedin.com/in/leonardodavid"
+      class="p-3 rounded-full border-2 border-brand-green transition-all hover:bg-brand-green-light"
+    >
+      <LinkedInIcon size={20} />
+    </a>
+    <a
+      aria-label={`${t("presentation.linksLabels.github")}`}
+      href="https://github.com/devswert"
+      class="p-3 rounded-full border-2 border-brand-green transition-all hover:bg-brand-green-light"
+    >
+      <GitHubIcon size={20} />
+    </a>
+  </div>
+</div>

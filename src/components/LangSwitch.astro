@@ -1,0 +1,14 @@
+---
+import { getRelativeLocaleUrl } from "astro:i18n";
+import { getLangFromUrl } from "../i18n/utils";
+import { languages } from "../i18n/ui";
+
+const lang = getLangFromUrl(Astro.url);
+const [nextLangCode, nextLangName] = Object.entries(languages).filter(
+  ([l]) => l !== lang,
+)[0];
+---
+
+<a class="text-lg" href={getRelativeLocaleUrl(nextLangCode, "/")}>
+  {nextLangName}
+</a>

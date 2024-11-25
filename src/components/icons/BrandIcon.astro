@@ -34,6 +34,8 @@ import TailwindIcon from "./TailwindIcon.astro";
 import TypeScriptIcon from "./TypeScriptIcon.astro";
 import VueIcon from "./VueIcon.astro";
 import WordPressIcon from "./WordPressIcon.astro";
+import VercelIcon from "./VercelIcon.astro";
+import AstroIcon from "./AstroIcon.astro";
 
 interface Props {
   icon: string;
@@ -78,3 +80,5 @@ const { icon, size = 100 } = Astro.props;
 {icon == "supabase" && <SupabaseIcon size={size} />}
 {icon == "react" && <ReactIcon size={size} />}
 {icon == "nextjs" && <NextJSIcon size={size} />}
+{icon == "vercel" && <VercelIcon size={size} />}
+{icon == "astro" && <AstroIcon size={size} />}

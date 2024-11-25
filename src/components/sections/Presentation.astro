@@ -1,13 +1,14 @@
 ---
 import { getImage } from "astro:assets";
-const rawImages = (await Astro.glob("../../assets/images/*.jpg")).sort(
-  (a, b) => {
-    const regex = /(\d+).jpg/;
-    const aNumber = parseInt(a.default.src.match(regex)[1]);
-    const bNumber = parseInt(b.default.src.match(regex)[1]);
-    return aNumber - bNumber;
-  },
-);
+const rawImages = await Astro.glob("../../assets/images/*.jpg");
+// .sort(
+//   (a, b) => {
+//     const regex = /(\d+).jpg/;
+//     const aNumber = parseInt(a.default.src.match(regex)[1]);
+//     const bNumber = parseInt(b.default.src.match(regex)[1]);
+//     return aNumber - bNumber;
+//   },
+// );
 
 import { getLangFromUrl, useTranslations } from "../../i18n/utils";
 import ArrowIcon from "../icons/ArrowIcon.astro";

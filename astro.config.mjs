@@ -13,6 +13,11 @@ export default defineConfig({
     locales: ["es", "en"],
   },
 
-  output: "hybrid",
-  adapter: vercel(),
+  output: "server",
+  adapter: vercel({
+    webAnalytics: {
+      enabled: true,
+    },
+    imageService: true,
+  }),
 });

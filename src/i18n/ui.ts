@@ -12,45 +12,42 @@ export const ui = {
     "presentation.longHey": "Hey there!",
     "presentation.myName": "I'm Leo",
     "presentation.summary":
-      "I've been working in tech and building products/services on the internet for the last +10 years, more on the backend side, but I enjoy playing with frontend, infrastructure, and even mobile apps with Flutter",
+      "I've been working in tech building products/services on the internet for the past 10+ years, mostly on the backend side, but I enjoy coding frontend, infrastructure, and even mobile apps with Flutter",
     "presentation.checkMyCVButton": "Check my CV",
     "presentation.linksLabels.email": "Send me an email",
     "presentation.linksLabels.github": "Check my GitHub profile",
-    "presentation.linksLabels.linkedin": "Keep in touch on LikedIn",
+    "presentation.linksLabels.linkedin": "Keep in touch on LinkedIn",
 
-    // About me Section
+    // About Me Section
     "aboutMe.title": "About Me",
     "aboutMe.firstParagraph":
-      "I'm a software engineer with +10 years of experience. During this time I've learned and grown in distinct scopes, from understanding what software engineering itself is to the importance of being part of a company where I share their mission/vision.",
-    "aboutMe.secondParagraph":
-      "I've worked building hybrid mobile apps, with frontend, backend, and some things about infrastructure (I love learning new stuff). I'm a person who loves coding, and every day I try to polish my skills to be a better software engineer, taking care of details in implementations that I'm building, from creating good documentation, delivering quality software, measurable, and tested, to the most optimal way to work in a team.",
-    "aboutMe.someTools":
-      "Some tools that I've used (don't have a particular order):",
+      "I have worked on building hybrid mobile applications, with experience in frontend, backend, and some infrastructure (I love learning new things). I am someone who enjoys coding, and every day I strive to refine my skills to become a better software engineer, paying attention to the details of the implementations I am building—ranging from creating good documentation, delivering quality, measurable, and tested software, to finding the most efficient ways to work as a team.",
+    "aboutMe.someTools": "Some tools I've used (in no particular order):",
 
     // Experience Section - Titles
     "experiences.professionalTitle": "Professional Experience",
-    "experiences.sideProjectsTitle": "Personal/Side Projects",
+    "experiences.sideProjectsTitle": "Personal Projects",
 
     // Experience Section - Jobs
     "experiences.jobs.healthatom.timeFrame": "Jan 2024 - Present",
     "experiences.jobs.healthatom.description":
-      "After some months of thinking and relaxing, I applied to this company where their mission caught my attention: “help others”.  As a software engineer, I don't only work coding in PHP or javascript, also, I suggest better practices to documentate our software, improve the way we collaborate as a team, and participate in meetings to suggest solutions to incoming requirements. Currently, I'm working in a team where we take care of custom integrations and features for an important company's client.",
+      "After a few months of reflecting and relaxing, I applied to this company because its mission caught my attention: \"Improving the quality and access to healthcare for people.\" As a Software Engineer, I don't just work coding in PHP or JavaScript; my impact is also reflected in:\n\n1. Implementing a new way of documenting and establishing best practices for doing so.\n2. Improving the way we collaborate as a team by breaking down our PRs to make them more scoped and releasing changes to production using Feature Flags.\n3. Writing ERDs before starting a new project.\n\nI am currently working in a team/cell where we focus on integrations and custom requirements for the company's strategic clients.",
 
     "experiences.jobs.uber.timeFrame": "Sept 2022 - Sept 2023",
     "experiences.jobs.uber.description":
-      "After Uber acquired Cornershop, it focused resources on migrating their operation into Uber's ecosystem. I joined a new team, where we build integrations between Partner's APIs and Uber. The integrations were related to the loyalty programs of each Partner and its particular requirements. At Uber, I improved my English communication, learned how a company works and operates on this scale, the importance of Design Docs in software development, monitoring, observability, and microservices.\n\nAnother of my responsibilities was to be part of on-call rotations in my team, where I had to take responsibility for unexpected behaviors in our services.",
+      "After the acquisition of Cornershop by Uber, resources were focused on moving the operation into Uber's ecosystem. I joined a new team, where we built integrations between the Partners' APIs and Uber. These integrations were primarily related to each Partner's loyalty programs and their specific requirements. At Uber, I improved my communication in English, learned how a large-scale company functions and operates, and gained an understanding of the importance of Design Docs in the software development process, as well as monitoring, observability, and microservices.\n\nAnother of my responsibilities was being part of my team's on-call rotations, where I had to take responsibility for unexpected situations in our services.",
 
-    "experiences.jobs.cornershop.timeFrame": "Ago 2021 - Sept 2022",
+    "experiences.jobs.cornershop.timeFrame": "Aug 2021 - Sept 2022",
     "experiences.jobs.cornershop.description":
-      "I arrived at Cornershop in 2021. It was an incredible moment because I dreamed of working in a company where, as a customer, I loved their product or service. I worked in the merchant administration panel, creating reports and dashboards for our merchant customers. Here, I started to see how a big company works. I learned the importance of working with more people and teams, scheduling changes, and requesting feedback. I improved my skills in writing tests, thinking and coding software scalable, getting better my communication skills, and improving my English.",
+      "I joined Cornershop in 2021. It was an incredible moment because I had always dreamed of working at a company where, as a customer, I genuinely love the product and service offered. I worked on the admin panel for the stores, creating reports and dashboards for our store administrators. This is where I started to see how a larger-scale company operates internally. I learned the importance of working with more people and teams, planning changes, and seeking feedback. I improved my skills by writing tests, thinking and coding more scalable software, enhancing my communication abilities, and improving my English.",
 
-    "experiences.jobs.checkrocket.timeFrame": "May 2015 - Ago 2021",
+    "experiences.jobs.checkrocket.timeFrame": "May 2015 - Aug 2021",
     "experiences.jobs.checkrocket.description":
-      "I was an engineer behind checkrocket.com. I joined the team after a successful MVP, and my responsibility was to create better, stable, and scalable software. Since 2015, we built a better product using Laravel, adding best development practices like CI/CD, testing, migrations to control the schemas, and building a production environment more stable on AWS.\n\nMy roles here were varied, from infrastructure, coding frontend, backend, and the hybrid mobile application.",
+      "I was an engineer behind checkrocket.com. I joined the team after a successful MVP, and my responsibility was to create a more stable and scalable software. Since 2015, we built a better product using Laravel, incorporating best development practices such as CI/CD, testing, migrations to manage schemas, and building a more scalable production environment on AWS.\n\nMy roles were varied, ranging from designing infrastructure to coding the frontend, backend, and the hybrid application.",
 
     "experiences.jobs.octano.timeFrame": "Ago 2014 - Apr 2015",
     "experiences.jobs.octano.description":
-      "My job was to build sites for the agency's clients. Here, I started to have more experience working with customers, listening, and taking better requirements. I was beginning to understand that my role was not only coding; it was about fully solving problems.",
+      "My job was to build websites for the agency's clients. This is where I gained more experience working directly with clients, listening to their needs, and gathering better requirements. I started to understand that my role wasn't just about writing code, but about solving problems in a comprehensive way.",
 
     "experiences.jobs.fxcm.timeFrame": "Mar 2014 - Ago 2014",
     "experiences.jobs.fxcm.description":
@@ -58,40 +55,48 @@ export const ui = {
 
     "experiences.jobs.open.timeFrame": "Jun 2013 - Mar 2014",
     "experiences.jobs.open.description":
-      "I worked building custom tools for the agency's clients. I learned a bit about the educational environment using different LMS.",
+      "I worked on building custom tools for the agency's clients. I also learned a bit about how the educational environment works using LMS.",
 
     "experiences.jobs.netglobalis.timeFrame": "Dic 2012 - Mar 2013",
     "experiences.jobs.netglobalis.description":
-      "This experience was an internship, where I was the first line of support, answering technical calls, managing some hosting servers, and helping customers to ingress in the server rooms. We worked on an MVP to automate some internal processes with Arduino, but we couldn't finish it.",
+      "This experience was an internship, where I worked on the front line of support, handling technical calls, managing some hosting servers, and onboarding clients to the server facilities. We also worked on a web pilot project that aimed to automate some internal processes using Arduinos, but it was never completed.",
 
     // Experience Section - Side Projects
+    "experiences.sideProjects.portafolio.date": "Present",
+    "experiences.sideProjects.portafolio.description":
+      "The website that your viewing ✌️",
+
+    "experiences.sideProjects.mollyclub.date": "Present",
+    "experiences.sideProjects.mollyclub.description":
+      'At one point, I was part of an exotic animal rescue foundation (rabbits, guinea pigs, birds, turtles, hamsters, among others), and I saw firsthand how challenging it is to manage volunteers and keep track of forms or costs. Driven by the need to optimize operations and "have more time for what matters", I am currently working on an MVP that will help manage an animal rescue NGO. I hope to launch it in 2024.',
+
     "experiences.sideProjects.pi.date": "Present",
     "experiences.sideProjects.pi.description":
-      "I'm working (as a freelance) as a backend engineer taking some devops responsibilities. We're building an MVP for an application to have \"home kinesiology sessions\".",
+      'I am working as a freelance Backend Engineer, taking on some DevOps responsibilities, building an MVP for a "home physiotherapy sessions" application.',
 
     "experiences.sideProjects.rocota.date": "2023 - Present",
     "experiences.sideProjects.rocota.description":
-      "It's an e-commerce store for Rocota, a hand-made brand that creates beautiful pottery pieces. I'm building it with Shopify.",
+      "It's an e-commerce platform for Rocota, a brand that creates beautiful handmade ceramic pieces. It was built using Shopify.",
 
     "experiences.sideProjects.tomaton.date": "2020",
     "experiences.sideProjects.tomaton.description":
-      "It's an application to enjoy with friends simulating a board game. It's a drinking game that each player can play on their device. It has games in real time where everyone votes for someone or mimics with temporizers. It was written with Flutter, using Cloud Firestore, and designed from scratch with Figma. It's abandoned, but I'm planning/developing a second version.",
+      "It's an app for enjoying with friends by simulating a game board. It's a drinking game app where each person can play on their own device. It includes real-time games like voting for someone or playing charades with timers. It was written with Flutter, using Cloud Firestore, and designed from scratch with Figma. It is currently abandoned, but I'm planning a second version.",
 
     "experiences.sideProjects.pideclub.date": "2019",
     "experiences.sideProjects.pideclub.description":
-      "It was a small e-commerce store for people who needed control of their products, manage public catalogs, and process orders. The potential clients were Instagram profiles that sell products or services via DM. Sadly, the MVP/pilot didn't have the expected impact.",
+      "It's a small e-commerce platform for stores that need control over their products, a product catalog, and the ability to process purchase orders. The target customers were Instagram profiles that sold products or services via DM. Unfortunately, the MVP didn't have the expected impact.",
 
     // Education Section
     "education.title": "Education",
     "education.firstParagraph":
-      "I started acquiring technical knowledge when I was 15. I studied in a technical school where I got a technical title in telecommunications. After that, from 2013 until 2017, I worked during the day and studied Computer Engineering at Duoc UC at night. However, most of my knowledge was acquired by resolving problems in companies where I worked, and the constant self-learning.",
+      "I started acquiring technical knowledge at the age of 15. I studied at a technical-professional high school, where I obtained a degree as a Telecommunications Technician. After that, from 2013 to 2017, I worked during the day and studied Computer Engineering at Duoc UC in the evenings. Although most of the knowledge I have comes from hands-on experience solving problems at the companies I've worked for, as well as from constant self-learning.",
     "education.secondParagraph":
-      "I completed some courses in Udemy about Flutter, GraphQL, and AWS CloudFormation.",
+      "I also completed several courses on Udemy about Flutter, GraphQL, and AWS CloudFormation.",
 
     // No tech things Section
     "noTechThings.title": "!(No) tech things",
     "noTechThings.firstParagraph":
-      "I live with my partner, my little princess (my daughter), 2 bunnies, and 2 cockatiels. It's a beautiful family, even if it sometimes looks like a zoo. For some years, I volunteered in a pet rescue ONG; spending time helping animals was something meaningful, and I hope to help again in another organization. I love a good cup of coffee with a V60 Dripper and tasty beans. Sometimes, I play cards with friends, like Magic or Mitos y Leyendas, and with my partner, we play Overcooked 2 at the end of the day; we love that game.",
+      "I live with my partner, my little princess (my daughter), 3 bunnies, and 2 cockatiels. It's a beautiful family, even though it sometimes feels like a zoo. For a few years, I volunteered at an animal rescue NGO, and spending my time helping animals was something truly meaningful. I hope to be able to help another NGO again sometime in the future. I'm in love with a good cup of coffee made with a V60 and high-quality beans. Sometimes I play card games with friends, like Magic or Mitos y Leyendas, and with my partner, we enjoy playing Overcooked 2 at the end of the day — we absolutely love that game.",
 
     // Footer Section
     "footer.message": "{coded} with {love}",
@@ -107,7 +112,7 @@ export const ui = {
     "presentation.longHey": "Hola!",
     "presentation.myName": "Soy Leo",
     "presentation.summary":
-      "He trabajado en tech construyendo productos/servicios en internet en los en los últimos +10 años, más en el lado del backend, pero disfruto jugar con frontend, infraestructura, e incluso mobile apps con Flutter",
+      "He trabajado en tech construyendo productos/servicios en internet en los en los últimos +10 años, más en el lado del backend, pero disfruto codear frontend, infraestructura, e incluso mobile apps con Flutter",
     "presentation.checkMyCVButton": "Échale un ojo a mi CV",
     "presentation.linksLabels.email": "Envíame un email",
     "presentation.linksLabels.github": "Revisa mi perfil de GitHub",
@@ -116,9 +121,7 @@ export const ui = {
     // About Me Section
     "aboutMe.title": "Sobre Mi",
     "aboutMe.firstParagraph":
-      "Soy un ingeniero de software con +10 años de experiencia. Durante este tiempo he aprendido y crecido en distintos ámbitos, desde comprender qué es la ingeniería de software, a entender lo importante que es formar parte en una compañía en la que comparto su misión/visión.",
-    "aboutMe.secondParagraph":
-      "He trabajado construyendo aplicaciones móviles híbridas, con frontend, backend, y algunas cosas de infraestructura (me encanta aprender cosas nuevas). Soy una persona que disfruta de codear, y cada día trato de pulir mis habilidades para ser un mejor ingeniero de software, poniendo atención en los detalles de las implementaciones que estoy construyendo, desde crear buena documentación, entregando software de calidad, medible, y testeado, hasta la manera más óptima de trabajar en equipo.",
+      "He trabajado construyendo aplicaciones móviles híbridas, con frontend, backend, y algo de infraestructura (me encanta aprender cosas nuevas). Soy una persona que disfruta de codear, y cada día trato de pulir mis habilidades para ser un mejor ingeniero de software, poniendo atención en los detalles de las implementaciones que estoy construyendo, desde crear buena documentación, entregando software de calidad, medible, y testeado, hasta la manera más óptima de trabajar en equipo.",
     "aboutMe.someTools":
       "Algunas herramientas que he usado (no tienen ningún orden en particular):",
 
@@ -129,11 +132,11 @@ export const ui = {
     // Experience Section - Jobs
     "experiences.jobs.healthatom.timeFrame": "Ene 2024 - Presente",
     "experiences.jobs.healthatom.description":
-      "Después de unos meses de pensar y relajarme, apliqué a esta compañía donde su misión captó mi atención: “ayudar a otros”. Como Software Engineer, no solo trabajo codeando en PHP o javascript, también sugiero mejores prácticas para documentar nuestro software, mejorar la forma en que colaboramos como equipo, y participar en reuniones para sugerir soluciones a nuevos requerimientos. Actualmente estoy trabajando en una célula/equipo donde nos preocupamos de integraciones y requerimientos personalizados para un cliente importante de la compañía.",
+      'Después de unos meses de pensar y relajarme, me apliqué a esta compañía donde su misión captó mi atención: "Mejorar la calidad y el acceso de salud a las personas". Como Software Engineer, no solo trabajo codeando en PHP o javascript, mí impacto también lo traduzco en:\n\n1. Implementar una nueva forma de documentar, y tener buenas prácticas al hacerlo. \n2. Mejorar la forma en que colaboramos como equipo dividiendo nuestros PRs haciéndolos más scopeados, y lanzando cambios a producción usando Feature Flags. \n 3. Escribir ERDs antes de comenzar un nuevo proyecto. \n\n Actualmente estoy trabajando en una célula/equipo donde nos preocupamos de integraciones y requerimientos personalizados para clientes estratégicos de la compañía.',
 
     "experiences.jobs.uber.timeFrame": "Sept 2022 - Sept 2023",
     "experiences.jobs.uber.description":
-      "Luego de la adquisición de Cornershop por parte de Uber, se enfocaron recursos en mover su operación dentro del ecosistema de Uber. Me uní a un equipo nuevo, donde construimos integraciones entre las APIs de los Partners y Uber. Principalmente las integraciones estaban relacionadas a los programas de lealtad de cada Partner y sus requerimientos particulares. En Uber mejoré mi comunicación en Inglés, aprendí como funciona y opera una compañía de gran escala, la importancia de los Design Docs en el proceso de desarrollo de software, monitoreo, observabilidad, y micro servicios.\n\nOtra de mis responsabilidades fué ser parte de las rotaciones de on-call de mi equipo, donde debía tomar responsabilidad de situaciones inesperadas en nuestros servicios.",
+      "Luego de la adquisición de Cornershop por parte de Uber, se enfocaron recursos en mover la operación dentro del ecosistema de Uber. Me uní a un equipo nuevo, donde construimos integraciones entre las APIs de los Partners y Uber. Principalmente las integraciones estaban relacionadas a los programas de lealtad de cada Partner y sus requerimientos particulares. En Uber mejoré mi comunicación en Inglés, aprendí como funciona y opera una compañía de gran escala, la importancia de los Design Docs en el proceso de desarrollo de software, monitoreo, observabilidad, y micro servicios.\n\nOtra de mis responsabilidades fué ser parte de las rotaciones de on-call de mi equipo, donde debía tomar responsabilidad de situaciones inesperadas en nuestros servicios.",
 
     "experiences.jobs.cornershop.timeFrame": "Ago 2021 - Sept 2022",
     "experiences.jobs.cornershop.description":
@@ -160,6 +163,14 @@ export const ui = {
       "Esta experiencia fué una práctica profesional, donde trabajé en la primera línea de soporte, desde atender llamados técnicos, administrar algunos servidores de hosting, e ingresar clientes a las instalaciones de servidores. Hicimos un piloto web donde se pretendía automatizar algunos procesos internos con algunos Arduinos, pero no alcanzó a ser finalizado.",
 
     // Experience Section - Side Projects
+    "experiences.sideProjects.portafolio.date": "Presente",
+    "experiences.sideProjects.portafolio.description":
+      "El sitio que estas viendo ✌️",
+
+    "experiences.sideProjects.mollyclub.date": "Presente",
+    "experiences.sideProjects.mollyclub.description":
+      "En algún momento formé parte de una fundación de rescate de animales exóticos (conejos, cobayas, aves, tortugas, hamsters, entre otros) y vi en primera persona lo difícil que es gestionar voluntarios y llevar control de formularios o costos. Bajo la necesidad de optimizar la operación y “tener más tiempo para lo importante”, estoy trabajando en un MVP que permitirá gestionar una ONG de rescate animal. Espero que salga durante este 2024.",
+
     "experiences.sideProjects.pi.date": "Presente",
     "experiences.sideProjects.pi.description":
       'Estoy trabajando (de freelance) Backend Engineer tomando algunas responsabilidades de DevOps. Estamos construyendo un MVP para una aplicación de "sesiones de kinesiología en casa".',
@@ -186,7 +197,7 @@ export const ui = {
     // No tech things Section
     "noTechThings.title": "Cositas !(No) tech",
     "noTechThings.firstParagraph":
-      "Vivo con mi pareja, mi pequeña princesa (mi hija), 2 conejitos, y 2 cacatúas ninfa. Es una hermosa familia, incluso cuando a veces parece un zoo. Por algunos años, fuí voluntario en una ONG de rescate de animales, pasar mi tiempo ayudando animales fué algo significativo, y espero poder volver a ayudar a otra ONG en algún momento. Me enamora una buena taza de café hecha con una V60 y unos buenos granos. A veces juego cartas con amigos, como Magic o Mitos y Leyendas, y con mi pareja jugamos Overcooked 2 al final del día, amamos ese juego.",
+      "Vivo con mi pareja, mi pequeña princesa (mi hija), 3 conejitos, y 2 cacatúas ninfa. Es una hermosa familia, incluso cuando a veces parece un zoo. Por algunos años, fuí voluntario en una ONG de rescate de animales, pasar mi tiempo ayudando animales fué algo significativo, y espero poder volver a ayudar a otra ONG en algún momento. Me enamora una buena taza de café hecha con una V60 y unos buenos granos. A veces juego cartas con amigos, como Magic o Mitos y Leyendas, y con mi pareja jugamos Overcooked 2 al final del día, amamos ese juego.",
 
     // Footer Section
     "footer.message": "{coded} with {love}",

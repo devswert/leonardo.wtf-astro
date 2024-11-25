@@ -18,6 +18,7 @@
     "@types/blobshape": "^1.0.0",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
+    "@vercel/speed-insights": "^1.1.0",
     "animejs": "^3.2.1",
     "astro": "^4.16.13",
     "blobs": "^2.3.0-beta.2",

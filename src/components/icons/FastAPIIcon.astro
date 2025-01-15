@@ -1,9 +1,10 @@
 ---
 interface Props {
   size: number;
+  asSticker?: boolean;
 }
 
-const { size = 100 } = Astro.props;
+const { size = 100, asSticker = true } = Astro.props;
 ---
 
 <svg
@@ -12,7 +13,9 @@ const { size = 100 } = Astro.props;
   fill="none"
   xmlns="http://www.w3.org/2000/svg"
   viewBox="0 0 160 160"
+  class={asSticker ? "sticker-icon" : ""}
 >
+  >
   <circle cx="77" cy="77" fill="#05998b" r="77"></circle>
   <path
     d="M81.375 18.667l-38.75 70H77.5l-3.875 46.666 38.75-70H77.5z"

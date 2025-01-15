@@ -47,7 +47,7 @@ const t = useTranslations(lang);
         {job.data.tools.length > 0 && (
           <div slot="tools" class="flex flex-wrap gap-4">
             {job.data.tools.map((icon: string) => (
-              <BrandIcon icon={icon} size={30} />
+              <BrandIcon icon={icon} size={30} asSticker={false} />
             ))}
           </div>
         )}
@@ -78,7 +78,7 @@ const t = useTranslations(lang);
         {job.data.tools.length > 0 && (
           <div slot="tools" class="flex flex-wrap gap-4">
             {job.data.tools.map((icon: string) => (
-              <BrandIcon icon={icon} size={30} />
+              <BrandIcon icon={icon} size={30} asSticker={false} />
             ))}
           </div>
         )}

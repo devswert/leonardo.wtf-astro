@@ -1,9 +1,10 @@
 ---
 interface Props {
   size: number;
+  asSticker?: boolean;
 }
 
-const { size = 100 } = Astro.props;
+const { size = 100, asSticker = true } = Astro.props;
 ---
 
 <svg
@@ -11,6 +12,7 @@ const { size = 100 } = Astro.props;
   height={`${size}px`}
   viewBox="0 0 32 32"
   xmlns="http://www.w3.org/2000/svg"
+  class={asSticker ? "sticker-icon" : ""}
 >
   <title>file_type_tailwind</title>
   <path

@@ -1,9 +1,10 @@
 ---
 interface Props {
   size: number;
+  asSticker?: boolean;
 }
 
-const { size = 100 } = Astro.props;
+const { size = 100, asSticker = true } = Astro.props;
 ---
 
 <svg
@@ -14,6 +15,7 @@ const { size = 100 } = Astro.props;
   xmlns="http://www.w3.org/2000/svg"
   preserveAspectRatio="xMidYMid"
   fill="#000000"
+  class={asSticker ? "sticker-icon" : ""}
   ><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g
     id="SVGRepo_tracerCarrier"
     stroke-linecap="round"

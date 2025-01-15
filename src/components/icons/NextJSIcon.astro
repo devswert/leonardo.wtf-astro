@@ -1,9 +1,10 @@
 ---
 interface Props {
   size: number;
+  asSticker?: boolean;
 }
 
-const { size = 100 } = Astro.props;
+const { size = 100, asSticker = true } = Astro.props;
 ---
 
 <svg
@@ -12,6 +13,7 @@ const { size = 100 } = Astro.props;
   viewBox="0 0 24 24"
   fill="none"
   xmlns="http://www.w3.org/2000/svg"
+  class={asSticker ? "sticker-icon" : ""}
 >
   <g clip-path="url(#clip0)">
     <path

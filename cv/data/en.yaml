@@ -16,13 +16,13 @@ experience:
   - company: HealthAtom
     roles:
       - position: Tech Lead
-        dates: Oct 2025 – Present
+        dates: May 2025 – Present
         bullets:
           - "Lead the Enterprise cell development team on strategic client projects: prioritization, design reviews, and mentorship"
           - Set documentation standards, ERDs, and delivery practices tailored to each account
           - Coordinate production releases with scoped PRs, feature flags, and clear rollback criteria
       - position: Software Engineer
-        dates: Jan 2024 – Oct 2025
+        dates: Jan 2024 – May 2025
         bullets:
           - Delivered end-to-end custom solutions for strategic healthcare clients
           - Applied ERD-first design and technical documentation before each delivery

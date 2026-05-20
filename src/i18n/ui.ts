@@ -31,7 +31,7 @@ export const ui = {
     // Experience Section - Jobs
     "experiences.jobs.healthatom.timeFrame": "Jan 2024 - Present",
     "experiences.jobs.healthatom.description":
-      "Tech Lead (Oct 2025 – Present): I lead the Enterprise cell on strategic client projects—prioritization, design reviews, mentoring, and delivery standards.\n\nSoftware Engineer (Jan 2024 – Oct 2025): end-to-end custom solutions for strategic healthcare clients, ERD-first design, scoped PRs, and feature flags.",
+      "Tech Lead (May 2025 – Present): I lead the Enterprise cell on strategic client projects—prioritization, design reviews, mentoring, and delivery standards.\n\nSoftware Engineer (Jan 2024 – May 2025): end-to-end custom solutions for strategic healthcare clients, ERD-first design, scoped PRs, and feature flags.",
 
     "experiences.jobs.uber.timeFrame": "Sept 2022 - Sept 2023",
     "experiences.jobs.uber.description":
@@ -131,7 +131,7 @@ export const ui = {
     // Experience Section - Jobs
     "experiences.jobs.healthatom.timeFrame": "Ene 2024 - Presente",
     "experiences.jobs.healthatom.description":
-      "Tech Lead (Oct 2025 – Presente): lidero la célula Enterprise en proyectos para clientes estratégicos—priorización, revisiones de diseño, mentoring y estándares de entrega.\n\nSoftware Engineer (Ene 2024 – Oct 2025): soluciones a medida de punta a punta para clientes estratégicos de salud, diseño con ERD, PRs acotados y feature flags.",
+      "Tech Lead (May 2025 – Presente): lidero la célula Enterprise en proyectos para clientes estratégicos—priorización, revisiones de diseño, mentoring y estándares de entrega.\n\nSoftware Engineer (Ene 2024 – May 2025): soluciones a medida de punta a punta para clientes estratégicos de salud, diseño con ERD, PRs acotados y feature flags.",
 
     "experiences.jobs.uber.timeFrame": "Sept 2022 - Sept 2023",
     "experiences.jobs.uber.description":

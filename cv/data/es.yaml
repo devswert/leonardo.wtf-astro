@@ -16,13 +16,13 @@ experience:
   - company: HealthAtom
     roles:
       - position: Tech Lead
-        dates: Oct 2025 – Presente
+        dates: May 2025 – Presente
         bullets:
           - "Lidero el equipo de desarrollo de la célula Enterprise en proyectos para clientes estratégicos: priorización, revisiones de diseño y mentoring"
           - Defino estándares de documentación, ERDs y prácticas de entrega alineadas a cada cuenta
           - Coordino releases a producción con PRs acotados, feature flags y criterios de rollback claros
       - position: Software Engineer
-        dates: Ene 2024 – Oct 2025
+        dates: Ene 2024 – May 2025
         bullets:
           - Entregué soluciones a medida para clientes estratégicos del sector salud, de punta a punta
           - Apliqué diseño con ERD y documentación técnica antes de cada entrega

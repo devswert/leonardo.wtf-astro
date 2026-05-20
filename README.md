@@ -41,7 +41,7 @@ src/
 
 ## Getting started
 
-**Requirements:** [Node.js 24.x](https://nodejs.org/) (matches Vercel build and serverless runtime). With [nvm](https://github.com/nvm-sh/nvm): `nvm use` (reads `.nvmrc`).
+**Requirements:** [Node.js 20.x](https://nodejs.org/) (matches `@astrojs/vercel` serverless runtime). With [nvm](https://github.com/nvm-sh/nvm): `nvm use` (reads `.nvmrc`).
 
 ```bash
 git clone https://github.com/devswert/leonardo.wtf-astro.git
@@ -80,7 +80,7 @@ npx puppeteer browsers install chrome
 
 ## Deployment (Vercel)
 
-Node **24.x** is pinned via `package.json` → `engines.node` and `.nvmrc`. Vercel uses it for both the build and SSR functions (see `vercel.json`).
+Node **20.x** is pinned via `package.json` → `engines.node` and `.nvmrc`. Vercel uses it for the build; SSR functions use `nodejs20.x` via `@astrojs/vercel` (see `vercel.json`).
 
 `vercel.json` sets `buildCommand` to `npm run build`, which:
 

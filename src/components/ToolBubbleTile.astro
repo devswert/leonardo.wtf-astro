@@ -1,0 +1,33 @@
+---
+import BrandIcon from "./icons/BrandIcon.astro";
+import { generateBlobPath, randomBlobSeed } from "../utils/blob-path";
+
+interface Props {
+  icon: string;
+  iconSize?: number;
+  bubbleSize?: number;
+  seed?: number;
+}
+
+const { icon, iconSize = 28, bubbleSize = 48, seed = randomBlobSeed() } =
+  Astro.props;
+
+const blobPath = generateBlobPath({ seed, size: 80 });
+---
+
+<div
+  class="group relative flex shrink-0 items-center justify-center"
+  style={`width: ${bubbleSize}px; height: ${bubbleSize}px;`}
+  title={icon}
+>
+  <svg
+    class="pointer-events-none absolute inset-0 h-full w-full text-brand-light/10 transition-colors duration-200 group-hover:text-brand-green-light/40"
+    viewBox="0 0 80 80"
+    aria-hidden="true"
+  >
+    <path d={blobPath} fill="currentColor"></path>
+  </svg>
+  <div class="relative z-10">
+    <BrandIcon icon={icon} size={iconSize} asSticker={false} />
+  </div>
+</div>

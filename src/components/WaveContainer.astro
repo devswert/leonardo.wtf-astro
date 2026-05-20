@@ -1,0 +1,49 @@
+---
+import { GenerateClosedPath } from "../utils/path-utils";
+
+interface Props {
+  color: string;
+}
+
+const { color } = Astro.props;
+
+const waveOptions = {
+  height: 320,
+  width: 1440,
+  segmentCount: 5,
+  layerCount: 2,
+  variance: 0.55 + Math.random() * 0.35,
+};
+
+const upPath = GenerateClosedPath(waveOptions);
+const downPath = GenerateClosedPath({
+  ...waveOptions,
+  variance: 0.55 + Math.random() * 0.35,
+});
+---
+
+<>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 1400 300"
+    class="-mb-1"
+    aria-hidden="true"
+  >
+    <path fill={color} fill-opacity="1" d={upPath}></path>
+  </svg>
+
+  <slot />
+
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 1400 300"
+    class="-mt-1"
+    aria-hidden="true"
+  >
+    <path
+      fill={color}
+      fill-opacity="1"
+      d={downPath}
+      transform="rotate(-180 700 150)"></path>
+  </svg>
+</>

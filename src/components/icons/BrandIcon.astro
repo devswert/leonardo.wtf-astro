@@ -86,30 +86,28 @@ const { icon, size = 100, asSticker = true } = Astro.props;
 
 <svg style="width:0;height:0;position:absolute;" aria-hidden="true">
   <defs>
-    <filter id="solid-background">
-      <!-- Full white background -->
-      <feFlood result="white" flood-color="#fdf6ec"></feFlood>
-
-      <!-- Create expanded mask -->
+    <filter
+      id="sticker"
+      x="-25%"
+      y="-25%"
+      width="150%"
+      height="150%"
+      color-interpolation-filters="sRGB"
+    >
       <feMorphology
         in="SourceAlpha"
         operator="dilate"
-        radius="3.5"
-        result="expanded"></feMorphology>
-
-      <!-- Clip white background to expanded shape -->
-      <feComposite in="white" in2="expanded" operator="in" result="white-border"
-      ></feComposite>
-
-      <!-- Gray background -->
-      <feFlood result="bg" flood-color="red"></feFlood>
-      <feComposite in="bg" in2="SourceAlpha" operator="in" result="bg-shape"
-      ></feComposite>
-
-      <!-- Combine all layers -->
+        radius="5"
+        result="dilated"></feMorphology>
+      <feGaussianBlur in="dilated" stdDeviation="0.8" result="blurred"
+      ></feGaussianBlur>
+      <feColorMatrix
+        in="blurred"
+        type="matrix"
+        values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 40 -10"
+        result="solidWhite"></feColorMatrix>
       <feMerge>
-        <feMergeNode in="white-border"></feMergeNode>
-        <feMergeNode in="bg-shape"></feMergeNode>
+        <feMergeNode in="solidWhite"></feMergeNode>
         <feMergeNode in="SourceGraphic"></feMergeNode>
       </feMerge>
     </filter>
@@ -119,7 +117,7 @@ const { icon, size = 100, asSticker = true } = Astro.props;
 <style is:global>
   .sticker-icon {
     display: inline-block;
-    filter: url(#solid-background) drop-shadow(0 0 2px rgba(0, 0, 0, 0.2));
+    filter: url(#sticker) drop-shadow(0 3px 8px rgba(0, 0, 0, 0.28));
     backface-visibility: hidden;
   }
 </style>

@@ -1,0 +1,43 @@
+---
+import BurbleShape from "./BurbleShape.tsx";
+
+interface Props {
+  images: string[];
+  randomOrder: boolean;
+  class?: string;
+  preload?: boolean;
+}
+
+const { images, randomOrder, class: className, preload = false } = Astro.props;
+const firstImage = images[0];
+---
+
+{preload && firstImage && (
+  <link rel="preload" as="image" href={firstImage} type="image/webp" fetchpriority="high" />
+)}
+
+<div class:list={["burble-shape-slot aspect-square w-full", className]}>
+  <BurbleShape client:only="react" images={images} randomOrder={randomOrder}>
+    <div class="burble-shape-fallback block h-full w-full" aria-hidden="true">
+      {
+        firstImage && (
+          <img
+            src={firstImage}
+            alt=""
+            width="512"
+            height="512"
+            decoding="async"
+            fetchpriority={preload ? "high" : "auto"}
+            class="h-full w-full object-cover"
+          />
+        )
+      }
+    </div>
+  </BurbleShape>
+</div>
+
+<style>
+  .burble-shape-slot {
+    contain: layout;
+  }
+</style>

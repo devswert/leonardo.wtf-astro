@@ -1,23 +1,99 @@
-# ¿Un Portfolio?
+# leonardo.wtf
 
-This is a small portfolio written to host a beautiful version of my cv, and in a near future write or publish notes/posts about what I'm learning. In a tech summary, this project was built with:
+Personal portfolio site for [leonardo.wtf](https://leonardo.wtf). Bilingual (English / Spanish), built with Astro and deployed on Vercel.
 
-- [Astro](https://astro.build/): A content-driven framework.
-- [TailwindCSS](https://tailwindcss.com/): CSS framework to create beautiful UIs.
-- [Blobs](https://blobs.dev/): Used to generate random SVG shapes used as ClipPath with images.
-- [Anime.js](https://animejs.com/): Used to have smooth animations between shape transitions.
+The site showcases professional experience, side projects, and a downloadable CV. CV PDFs are generated automatically at build time from structured YAML—no manual PDF editing in the repo.
 
-[Blobs Generator app](https://lokesh-coder.github.io/blobs.app/) was an inspiration to build the BurbleShape component.
+## Features
 
-## 🧞 Commands
+- **i18n** — English and Spanish routes (`/` and `/es/`)
+- **Content collections** — Jobs and side projects as Markdown with typed frontmatter
+- **CV pipeline** — Harvard-style HTML template → PDF via Puppeteer (`cv_en.pdf`, `cv_es.pdf`)
+- **Organic UI** — Blob-shaped photo carousel ([BurbleShape](src/components/BurbleShape.tsx)), SSR wave dividers, tool icons in random blob frames
+- **Minimal client JS** — React islands only where needed (accordion jobs, photo carousel)
 
-All commands are run from the root of the project, from a terminal:
+## Tech stack
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+| Layer              | Tools                                                                                |
+| ------------------ | ------------------------------------------------------------------------------------ |
+| Framework          | [Astro 4](https://astro.build/) (SSR on Vercel)                                      |
+| UI                 | [Tailwind CSS 3](https://tailwindcss.com/), [React 18](https://react.dev/) (islands) |
+| Content            | Astro Content Collections, [js-yaml](https://github.com/nodeca/js-yaml)              |
+| CV                 | [Handlebars](https://handlebarsjs.com/), [Puppeteer](https://pptr.dev/)              |
+| Animation / shapes | [anime.js](https://animejs.com/), [blobs](https://blobs.dev/)                        |
+| Deploy             | [Vercel](https://vercel.com/) (`@astrojs/vercel`)                                    |
+
+## Project layout
+
+```text
+cv/
+  data/en.yaml, es.yaml   # CV source of truth
+  template.html           # Print layout
+  generate.mjs            # YAML → HTML → PDF
+public/                   # Static assets (+ generated PDFs, gitignored)
+src/
+  components/             # Astro + React UI
+  content/jobs/           # Work experience entries
+  content/sideProjects/   # Personal projects
+  i18n/ui.ts              # Site copy (EN / ES)
+  pages/                  # Routes
+```
+
+## Getting started
+
+```bash
+git clone https://github.com/devswert/leonardo.wtf-astro.git
+cd leonardo.wtf-astro
+npm install
+npm run dev
+```
+
+Open [http://localhost:4321](http://localhost:4321).
+
+`npm install` runs a `postinstall` script that downloads a Chrome binary for Puppeteer (used only to generate CV PDFs).
+
+## Commands
+
+| Command                   | Description                                                           |
+| ------------------------- | --------------------------------------------------------------------- |
+| `npm run dev`             | Dev server at `localhost:4321`                                        |
+| `npm run generate:cv`     | Build `public/cv_en.pdf` and `public/cv_es.pdf` from `cv/data/*.yaml` |
+| `npm run build`           | Generate CVs → typecheck → production build                           |
+| `npm run preview`         | Preview the production build locally                                  |
+| `npm run astro -- --help` | Astro CLI help                                                        |
+
+## CV generation
+
+1. Edit `cv/data/en.yaml` and/or `cv/data/es.yaml`.
+2. Adjust layout in `cv/template.html` if needed.
+3. Run `npm run generate:cv` (or `npm run build`).
+
+PDFs are written to `public/` and served at `/cv_en.pdf` and `/cv_es.pdf`. They are listed in `.gitignore` so generated files are not committed; each deploy rebuilds them.
+
+**Chrome not found locally?** Re-run:
+
+```bash
+npx puppeteer browsers install chrome
+```
+
+## Deployment (Vercel)
+
+`vercel.json` sets `buildCommand` to `npm run build`, which:
+
+1. Installs dependencies (including Chrome via `postinstall`)
+2. Runs `generate:cv`
+3. Runs `astro check` and `astro build`
+
+CV generation runs at **build time**, not inside serverless functions on each request.
+
+After a deploy, confirm the build log contains:
+
+```text
+Generated cv_en.pdf
+Generated cv_es.pdf
+```
+
+## Credits
+
+- Blob shapes: [blobs.dev](https://blobs.dev/) — used for the photo carousel and tool icon backgrounds
+- Blob inspiration: [blobs.app](https://lokesh-coder.github.io/blobs.app/)

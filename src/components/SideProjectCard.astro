@@ -1,0 +1,29 @@
+---
+import BrandIcon from "./icons/BrandIcon.astro";
+
+interface Props {
+  company: string;
+  date: string;
+  description: string;
+  tools: string[];
+}
+
+const { company, date, description, tools } = Astro.props;
+---
+
+<div class="my-12 rounded text-brand-green">
+  <h3 class="font-sora text-2xl font-extrabold">{company}</h3>
+  <p class="font-sora">{date}</p>
+
+  <p class="font-sora mt-4 whitespace-pre-line">{description}</p>
+
+  {
+    tools.length > 0 && (
+      <div class="mt-4 inline-flex flex-wrap gap-4">
+        {tools.map((icon) => (
+          <BrandIcon icon={icon} size={30} asSticker={false} />
+        ))}
+      </div>
+    )
+  }
+</div>

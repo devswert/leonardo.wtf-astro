@@ -1,0 +1,120 @@
+name: Leonardo David Manríquez Montoya
+location: Santiago, Chile
+contact:
+  email: leo.david.mm@gmail.com
+  linkedin: linkedin.com/in/leonardodavid
+  github: github.com/devswert
+
+summary: >
+  Software engineer with 10+ years building scalable web products in healthcare, marketplaces,
+  and high-growth startups. Tech Lead for HealthAtom's Enterprise cell: I lead the development
+  team on strategic client projects, with a focus on prioritization, delivery quality, and mentorship.
+  Full-stack background across products and integrations; strong in APIs, CI/CD, feature flags,
+  and observability. I combine technical leadership with hands-on execution.
+
+experience:
+  - company: HealthAtom
+    roles:
+      - position: Tech Lead
+        dates: Oct 2025 – Present
+        bullets:
+          - "Lead the Enterprise cell development team on strategic client projects: prioritization, design reviews, and mentorship"
+          - Set documentation standards, ERDs, and delivery practices tailored to each account
+          - Coordinate production releases with scoped PRs, feature flags, and clear rollback criteria
+      - position: Software Engineer
+        dates: Jan 2024 – Oct 2025
+        bullets:
+          - Delivered end-to-end custom solutions for strategic healthcare clients
+          - Applied ERD-first design and technical documentation before each delivery
+          - Contributed to safer releases with scoped PRs and feature flags in production
+
+  - company: Uber
+    position: Software Engineer
+    dates: Sept 2022 – Sept 2023
+    bullets:
+      - Developed partner loyalty integrations between external APIs and the Uber platform (Go, Kafka, Redis)
+      - Owned on-call rotations and incident response for production services
+      - Applied design docs, observability, and microservices practices in a large-scale environment
+
+  - company: Cornershop by Uber
+    position: Backend Engineer
+    dates: Aug 2021 – Sept 2022
+    bullets:
+      - Built reports and dashboards in the store admin panel (Python, Django, PostgreSQL)
+      - Improved backend quality with automated tests and scalable service design
+
+  - company: CheckRocket
+    position: Software Engineer
+    dates: May 2015 – Aug 2021
+    narrative: >
+      Scaled the product after MVP using Laravel on AWS with CI/CD, automated testing, and schema
+      migrations. Designed production infrastructure and delivered across backend APIs, web frontend,
+      and hybrid mobile app.
+    bullets:
+      - Reduced deployment risk by introducing CI/CD and database migrations
+      - Operated AWS production stack and owned full-stack features end to end
+
+  - company: Octano
+    position: Web Developer
+    dates: Aug 2014 – Apr 2015
+    bullets:
+      - Delivered client websites and gathered requirements directly with stakeholders
+
+  - company: FXCM Chile
+    position: Web Developer
+    dates: Mar 2014 – Aug 2014
+    bullets:
+      - Migrated the corporate website to a maintainable CMS and supported daily email campaigns
+
+  - company: Open LatinoAmerica
+    position: Junior Developer
+    dates: Jun 2013 – Mar 2014
+    bullets:
+      - Built custom client tools and LMS-based educational features
+
+projects:
+  - name: Sinnea App
+    role: Founder & Developer
+    dates: 2026 – Present
+    description: >
+      Ongoing project to optimize workflows and operations between a concept store and independent
+      brands. MVP in development.
+
+  - name: TechBalance App
+    role: Freelance Backend Engineer
+    dates: 2024 – 2025
+    description: >
+      Kinesiology exercise app for self-guided at-home sessions, using movement-detection technology.
+
+  - name: Rocota
+    role: E-commerce Developer
+    dates: 2023 – Present
+    description: >
+      Launched a Shopify store for a handmade ceramics brand.
+
+education:
+  - institution: Duoc UC
+    degree: Computer Engineering (graduated; evening program while working full-time during the day)
+    dates: 2013 – 2017
+  - institution: Technical-Professional High School
+    degree: Telecommunications Technician
+    dates: Completed
+
+additionalSkills:
+  - Engineering team leadership and technical mentorship
+  - Technical documentation and ERD-driven design
+  - Feature flags and on-call incident response
+  - Cross-team collaboration
+  - English: professional working proficiency
+  - Continuous learning (Flutter, GraphQL, AWS CloudFormation)
+
+technologies: >
+  Go, JavaScript, TypeScript, PHP, Python, Laravel, Django, React, PostgreSQL, Redis, Kafka,
+  Docker, AWS, CI/CD.
+
+labels:
+  experience: Professional Experience
+  projects: Selected Projects
+  education: Education
+  additionalSkills: Additional Skills
+  technologies: Technologies

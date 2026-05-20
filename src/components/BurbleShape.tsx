@@ -1,6 +1,6 @@
 import anime from "animejs";
 import pkg from "blobs/v2";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import classnames from "classnames";
 const { svgPath } = pkg;
 
@@ -17,18 +17,23 @@ const defaultOptionsSVGPath = {
   size: 500,
 };
 
-function generateSVGPath() {
-  return svgPath({ ...defaultOptionsSVGPath, seed: useRandomNumber() });
+function shuffleImages(images: Array<string>) {
+  const shuffled = [...images];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+}
+
+function generateSVGPath(seed: number) {
+  return svgPath({ ...defaultOptionsSVGPath, seed });
 }
 
 const BurbleShape = (props: BurbleShapeProps) => {
-  let images = props.images;
-  if (props.randomOrder) {
-    for (let i = images.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [images[i], images[j]] = [images[j], images[i]];
-    }
-  }
+  const images = props.randomOrder
+    ? shuffleImages(props.images)
+    : props.images;
 
   return (
     <BurbleShapeImplementation
@@ -39,96 +44,121 @@ const BurbleShape = (props: BurbleShapeProps) => {
 };
 
 const BurbleShapeImplementation = (props: BurbleShapeProps) => {
-  if (props.images.length == 0) {
+  if (props.images.length === 0) {
     return null;
   }
 
-  const blobRef = useRef(null);
+  const blobRef = useRef<SVGPathElement>(null);
   const blobPathId = `blob-path-${useRandomNumber()}`;
   const imageShapeId = `image-shape-${blobPathId}`;
 
-  // State
-  const [currentPosition, setCurrentPosition] = useState(1);
+  const [currentPosition, setCurrentPosition] = useState(0);
   const [imageContainer1, setImageContainer1] = useState(props.images[0]);
   const [imageContainer2, setImageContainer2] = useState(
-    props.images[props.images.length == 1 ? 0 : 1],
+    props.images[props.images.length === 1 ? 0 : 1],
   );
-  const [currentContainer, setCurrentContainer] = useState("C1");
-  const [pathState, setPathState] = useState(generateSVGPath());
+  const [currentContainer, setCurrentContainer] = useState<"C1" | "C2">("C1");
+  const [pathState, setPathState] = useState(() =>
+    generateSVGPath(useRandomNumber()),
+  );
+
+  const currentPositionRef = useRef(currentPosition);
+  const currentContainerRef = useRef(currentContainer);
+
+  useEffect(() => {
+    currentPositionRef.current = currentPosition;
+  }, [currentPosition]);
+
+  useEffect(() => {
+    currentContainerRef.current = currentContainer;
+  }, [currentContainer]);
+
+  useEffect(() => {
+    props.images.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
+  }, [props.images]);
 
   const changeShape = () => {
-    const svgPath = generateSVGPath();
+    const nextPath = generateSVGPath(useRandomNumber());
 
     anime({
       targets: blobRef.current,
       easing: "easeInOutCubic",
       duration: 600,
-      d: svgPath,
+      d: nextPath,
       changeComplete: () => {
-        setPathState(svgPath);
+        setPathState(nextPath);
       },
     });
   };
 
   const flipContainers = () => {
-    setCurrentContainer(currentContainer == "C1" ? "C2" : "C1");
+    setCurrentContainer((prev) => (prev === "C1" ? "C2" : "C1"));
   };
 
-  const updateNextImage = () => {
+  const prepareNextImage = () => {
     const qty = props.images.length;
-    setCurrentPosition(currentPosition + 1 === qty ? 0 : currentPosition + 1);
-    if (currentContainer === "C1") {
-      setImageContainer2(props.images[currentPosition]);
+    if (qty <= 1) return;
+
+    const nextPosition =
+      currentPositionRef.current + 1 >= qty ? 0 : currentPositionRef.current + 1;
+    const nextImage = props.images[nextPosition];
+    const hiddenContainer = currentContainerRef.current === "C1" ? "C2" : "C1";
+
+    if (hiddenContainer === "C1") {
+      setImageContainer1(nextImage);
     } else {
-      setImageContainer1(props.images[currentPosition]);
+      setImageContainer2(nextImage);
     }
+
+    setCurrentPosition(nextPosition);
   };
 
   if (props.images.length === 1) {
     useInterval(changeShape, 3000);
   } else {
     useInterval(() => {
-      changeShape();
+      prepareNextImage();
       flipContainers();
-      updateNextImage();
+      changeShape();
     }, 3000);
   }
 
   return (
-    <>
-      <svg id="svg-container" viewBox="0 0 512 512">
-        <defs>
-          <clipPath id={imageShapeId}>
-            <path
-              ref={blobRef}
-              id={blobPathId}
-              d={pathState}
-              fill="#306564"
-            ></path>
-          </clipPath>
-        </defs>
+    <svg id="svg-container" viewBox="0 0 512 512" className="block h-full w-full">
+      <defs>
+        <clipPath id={imageShapeId}>
+          <path
+            ref={blobRef}
+            id={blobPathId}
+            d={pathState}
+            fill="#306564"
+          ></path>
+        </clipPath>
+      </defs>
 
-        <image
-          className={classnames(
-            "transition-opacity duration-700 mx-auto",
-            currentContainer === "C1" ? "opacity-100" : "opacity-0",
-          )}
-          width="100%"
-          clipPath={`url(#${imageShapeId})`}
-          href={imageContainer1}
-        ></image>
+      <image
+        className={classnames(
+          "transition-opacity duration-700 mx-auto",
+          currentContainer === "C1" ? "opacity-100" : "opacity-0",
+        )}
+        width="100%"
+        clipPath={`url(#${imageShapeId})`}
+        href={imageContainer1}
+      ></image>
 
-        <image
-          className={classnames(
-            "transition-opacity duration-700 mx-auto",
-            currentContainer === "C2" ? "opacity-100" : "opacity-0",
-          )}
-          width="100%"
-          clipPath={`url(#${imageShapeId})`}
-          href={imageContainer2}
-        ></image>
-      </svg>
-    </>
+      <image
+        className={classnames(
+          "transition-opacity duration-700 mx-auto",
+          currentContainer === "C2" ? "opacity-100" : "opacity-0",
+        )}
+        width="100%"
+        clipPath={`url(#${imageShapeId})`}
+        href={imageContainer2}
+      ></image>
+    </svg>
   );
 };
 

@@ -1,9 +1,44 @@
 ---
 import { getLangFromUrl, useTranslations } from "../../i18n/utils";
-import BrandIcon from "../icons/BrandIcon.astro";
+import ToolBubbleTile from "../ToolBubbleTile.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+
+const toolIcons = [
+  "go",
+  "js",
+  "typescript",
+  "php",
+  "python",
+  "dart",
+  "laravel",
+  "nestjs",
+  "nextjs",
+  "astro",
+  "flutter",
+  "css",
+  "tailwind",
+  "fastapi",
+  "django",
+  "mongo",
+  "node",
+  "vue",
+  "react",
+  "angular",
+  "redis",
+  "postgresql",
+  "mysql",
+  "kafka",
+  "docker",
+  "linux",
+  "figma",
+  "k8s",
+  "aws",
+  "firebase",
+  "supabase",
+  "vercel",
+] as const;
 ---
 
 <div class="bg-brand-green text-brand-light px-5 md:mx-auto">
@@ -15,38 +50,9 @@ const t = useTranslations(lang);
   <p class="mb-4">{t("aboutMe.firstParagraph")}</p>
   <p class="mb-4">{t("aboutMe.someTools")}</p>
 
-  <div class="flex flex-wrap gap-4 justify-center py-3">
-    <BrandIcon icon="go" size={45} />
-    <BrandIcon icon="js" size={45} />
-    <BrandIcon icon="typescript" size={45} />
-    <BrandIcon icon="php" size={45} />
-    <BrandIcon icon="python" size={45} />
-    <BrandIcon icon="dart" size={45} />
-    <BrandIcon icon="laravel" size={45} />
-    <BrandIcon icon="nestjs" size={45} />
-    <BrandIcon icon="nextjs" size={45} />
-    <BrandIcon icon="astro" size={45} />
-    <BrandIcon icon="flutter" size={45} />
-    <BrandIcon icon="css" size={45} />
-    <BrandIcon icon="tailwind" size={45} />
-    <BrandIcon icon="fastapi" size={45} />
-    <BrandIcon icon="django" size={45} />
-    <BrandIcon icon="mongo" size={45} />
-    <BrandIcon icon="node" size={45} />
-    <BrandIcon icon="vue" size={45} />
-    <BrandIcon icon="react" size={45} />
-    <BrandIcon icon="angular" size={45} />
-    <BrandIcon icon="redis" size={45} />
-    <BrandIcon icon="postgresql" size={45} />
-    <BrandIcon icon="mysql" size={45} />
-    <BrandIcon icon="kafka" size={45} />
-    <BrandIcon icon="docker" size={45} />
-    <BrandIcon icon="linux" size={45} />
-    <BrandIcon icon="figma" size={45} />
-    <BrandIcon icon="k8s" size={45} />
-    <BrandIcon icon="aws" size={45} />
-    <BrandIcon icon="firebase" size={45} />
-    <BrandIcon icon="supabase" size={45} />
-    <BrandIcon icon="vercel" size={45} />
+  <div class="flex flex-wrap justify-center gap-5 py-4 sm:gap-6">
+    {toolIcons.map((icon) => (
+      <ToolBubbleTile icon={icon} />
+    ))}
   </div>
 </div>

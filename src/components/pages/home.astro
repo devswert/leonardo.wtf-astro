@@ -5,7 +5,7 @@ import AboutMeSection from "../sections/AboutMe.astro";
 import EducationSection from "../sections/Education.astro";
 import NoTechThingsSection from "../sections/NoTechThings.astro";
 import ProfessionalExperienceSection from "../sections/ProfessionalExperience.astro";
-import WaveContainer from "../WaveContainer.tsx";
+import WaveContainer from "../WaveContainer.astro";
 import Footer from "../Footer.astro";
 import LangSwitch from "../LangSwitch.astro";
 ---
@@ -21,7 +21,7 @@ import LangSwitch from "../LangSwitch.astro";
     </section>
 
     <!-- About Me -->
-    <WaveContainer color="#306564" client:load>
+    <WaveContainer color="#306564">
       <div class="bg-brand-green">
         <section class="container max-w-5xl mx-auto">
           <AboutMeSection />
@@ -35,7 +35,7 @@ import LangSwitch from "../LangSwitch.astro";
     </section>
 
     <!-- Education -->
-    <WaveContainer color="#306564" client:load>
+    <WaveContainer color="#306564">
       <div class="bg-brand-green">
         <section class="container max-w-5xl mx-auto">
           <EducationSection />

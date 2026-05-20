@@ -1,0 +1,120 @@
+name: Leonardo David Manríquez Montoya
+location: Santiago, Chile
+contact:
+  email: leo.david.mm@gmail.com
+  linkedin: linkedin.com/in/leonardodavid
+  github: github.com/devswert
+
+summary: >
+  Ingeniero de software con más de 10 años construyendo productos web escalables en salud,
+  marketplaces y startups. Tech Lead de la célula Enterprise en HealthAtom: lidero el equipo
+  en proyectos para clientes estratégicos, con foco en priorización, calidad de entrega y mentoring.
+  Experiencia full-stack en productos e integraciones; sólido en APIs, CI/CD, feature flags y
+  observabilidad. Combino liderazgo técnico con ejecución hands-on.
+
+experience:
+  - company: HealthAtom
+    roles:
+      - position: Tech Lead
+        dates: Oct 2025 – Presente
+        bullets:
+          - "Lidero el equipo de desarrollo de la célula Enterprise en proyectos para clientes estratégicos: priorización, revisiones de diseño y mentoring"
+          - Defino estándares de documentación, ERDs y prácticas de entrega alineadas a cada cuenta
+          - Coordino releases a producción con PRs acotados, feature flags y criterios de rollback claros
+      - position: Software Engineer
+        dates: Ene 2024 – Oct 2025
+        bullets:
+          - Entregué soluciones a medida para clientes estratégicos del sector salud, de punta a punta
+          - Apliqué diseño con ERD y documentación técnica antes de cada entrega
+          - Contribuí a releases más seguros con PRs acotados y feature flags en producción
+
+  - company: Uber
+    position: Software Engineer
+    dates: Sept 2022 – Sept 2023
+    bullets:
+      - Construí integraciones de programas de lealtad entre APIs de partners y la plataforma Uber (Go, Kafka, Redis)
+      - Participé en rotaciones on-call con respuesta a incidentes en producción
+      - Apliqué design docs, observabilidad y microservicios en entorno de gran escala
+
+  - company: Cornershop by Uber
+    position: Backend Engineer
+    dates: Ago 2021 – Sept 2022
+    bullets:
+      - Desarrollé reportes y dashboards en el panel administrativo de tiendas (Python, Django, PostgreSQL)
+      - Mejoré calidad backend con tests automatizados y diseño de servicios escalable
+
+  - company: CheckRocket
+    position: Software Engineer
+    dates: May 2015 – Ago 2021
+    narrative: >
+      Escalé el producto post-MVP con Laravel en AWS, incorporando CI/CD, testing automatizado y migraciones
+      de esquema. Diseñé infraestructura productiva y entregué features en backend, frontend web y app híbrida.
+    bullets:
+      - Reduje riesgo de despliegues introduciendo CI/CD y migraciones de base de datos
+      - Operé stack productivo en AWS con ownership full-stack de punta a punta
+
+  - company: Octano
+    position: Web Developer
+    dates: Ago 2014 – Abr 2015
+    bullets:
+      - Entregué sitios para clientes de agencia y levanté requerimientos con stakeholders
+
+  - company: FXCM Chile
+    position: Web Developer
+    dates: Mar 2014 – Ago 2014
+    bullets:
+      - Migré el sitio corporativo a un CMS mantenible y apoyé campañas diarias por email
+
+  - company: Open LatinoAmerica
+    position: Junior Developer
+    dates: Jun 2013 – Mar 2014
+    bullets:
+      - Desarrollé herramientas a medida para clientes y funcionalidades educativas con LMS
+
+projects:
+  - name: Sinnea App
+    role: Fundador y Desarrollador
+    dates: 2026 – Presente
+    description: >
+      Proyecto en curso para optimizar el flujo y las operaciones entre un Concept Store y marcas
+      independientes. MVP en desarrollo.
+
+  - name: TechBalance App
+    role: Backend Engineer Freelance
+    dates: 2024 – 2025
+    description: >
+      Aplicación de ejercicios kinesiológicos para sesiones auto-guiadas en el hogar, con tecnología
+      de detección de movimientos.
+
+  - name: Rocota
+    role: Desarrollador E-commerce
+    dates: 2023 – Presente
+    description: >
+      Lanzamiento de tienda Shopify para marca de cerámica artesanal.
+
+education:
+  - institution: Duoc UC
+    degree: Ingeniería en Informática (titulado; estudios nocturnos con jornada laboral diurna)
+    dates: 2013 – 2017
+  - institution: Colegio Técnico-Profesional
+    degree: Técnico en Telecomunicaciones
+    dates: Completado
+
+additionalSkills:
+  - Liderazgo de equipos de desarrollo y mentoring técnico
+  - Documentación técnica y diseño con ERD
+  - Feature flags y respuesta a incidentes on-call
+  - Colaboración entre equipos
+  - Inglés con dominio profesional para el trabajo (professional working proficiency)
+  - Aprendizaje continuo (Flutter, GraphQL, AWS CloudFormation)
+
+technologies: >
+  Go, JavaScript, TypeScript, PHP, Python, Laravel, Django, React, PostgreSQL, Redis, Kafka,
+  Docker, AWS, CI/CD.
+
+labels:
+  experience: Experiencia Profesional
+  projects: Proyectos Destacados
+  education: Educación
+  additionalSkills: Skills Adicionales
+  technologies: Tecnologías

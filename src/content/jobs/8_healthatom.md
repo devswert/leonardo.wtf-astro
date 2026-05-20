@@ -6,7 +6,7 @@ tools:
   - "react"
   - "mysql"
   - "astro"
-position: "Software Engineer"
+position: "Tech Lead"
 timeFrame: "experiences.jobs.healthatom.timeFrame"
 description: "experiences.jobs.healthatom.description"
 order: 8

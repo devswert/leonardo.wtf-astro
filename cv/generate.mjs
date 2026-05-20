@@ -3,13 +3,22 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import yaml from "js-yaml";
 import Handlebars from "handlebars";
-import puppeteer from "puppeteer";
+import puppeteer from "puppeteer-core";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.resolve(__dirname, "..");
 const dataDir = path.join(__dirname, "data");
 const templatePath = path.join(__dirname, "template.html");
 const publicDir = path.join(rootDir, "public");
+
+const isVercel = process.env.VERCEL === "1";
+
+const launchArgs = [
+  "--no-sandbox",
+  "--disable-setuid-sandbox",
+  "--disable-dev-shm-usage",
+  "--disable-gpu",
+];
 
 const locales = [
   { lang: "en", file: "en.yaml", output: "cv_en.pdf" },
@@ -21,9 +30,29 @@ async function loadTemplate() {
   return Handlebars.compile(source);
 }
 
+async function launchBrowser() {
+  if (isVercel) {
+    const chromium = (await import("@sparticuz/chromium")).default;
+    chromium.setGraphicsMode = false;
+
+    return puppeteer.launch({
+      args: [...chromium.args, ...launchArgs],
+      executablePath: await chromium.executablePath(),
+      headless: true,
+    });
+  }
+
+  const { default: puppeteerFull } = await import("puppeteer");
+
+  return puppeteer.launch({
+    headless: true,
+    executablePath: puppeteerFull.executablePath(),
+    args: launchArgs,
+  });
+}
+
 async function generatePdf(browser, html, outputPath) {
   const page = await browser.newPage();
-  // Static inline HTML — no external assets; networkidle0 can hang on link prefetch/DNS.
   await page.setContent(html, { waitUntil: "load", timeout: 60_000 });
   await page.pdf({
     path: outputPath,
@@ -37,15 +66,7 @@ async function generatePdf(browser, html, outputPath) {
 async function main() {
   await fs.mkdir(publicDir, { recursive: true });
   const compile = await loadTemplate();
-  const browser = await puppeteer.launch({
-    headless: true,
-    args: [
-      "--no-sandbox",
-      "--disable-setuid-sandbox",
-      "--disable-dev-shm-usage",
-      "--disable-gpu",
-    ],
-  });
+  const browser = await launchBrowser();
 
   try {
     for (const { lang, file, output } of locales) {

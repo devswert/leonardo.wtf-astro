@@ -41,6 +41,8 @@ src/
 
 ## Getting started
 
+**Requirements:** [Node.js 24.x](https://nodejs.org/) (matches Vercel build and serverless runtime). With [nvm](https://github.com/nvm-sh/nvm): `nvm use` (reads `.nvmrc`).
+
 ```bash
 git clone https://github.com/devswert/leonardo.wtf-astro.git
 cd leonardo.wtf-astro
@@ -50,7 +52,7 @@ npm run dev
 
 Open [http://localhost:4321](http://localhost:4321).
 
-`npm install` runs a `postinstall` script that downloads a Chrome binary for Puppeteer (used only to generate CV PDFs).
+`npm install` downloads a local Chrome binary for Puppeteer (skipped on Vercel — see below).
 
 ## Commands
 
@@ -78,13 +80,15 @@ npx puppeteer browsers install chrome
 
 ## Deployment (Vercel)
 
+Node **24.x** is pinned via `package.json` → `engines.node` and `.nvmrc`. Vercel uses it for both the build and SSR functions (see `vercel.json`).
+
 `vercel.json` sets `buildCommand` to `npm run build`, which:
 
-1. Installs dependencies (including Chrome via `postinstall`)
-2. Runs `generate:cv`
+1. Installs dependencies (`postinstall` skips the Chrome download on Vercel)
+2. Runs `generate:cv` using [`@sparticuz/chromium`](https://github.com/Sparticuz/chromium) (Linux libs bundled — fixes `libnspr4.so` errors)
 3. Runs `astro check` and `astro build`
 
-CV generation runs at **build time**, not inside serverless functions on each request.
+CV generation runs at **build time**, not inside serverless functions on each request. Locally, `generate:cv` uses Puppeteer’s Chrome from `~/.cache/puppeteer`.
 
 After a deploy, confirm the build log contains:
 

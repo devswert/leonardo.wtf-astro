@@ -2,10 +2,13 @@
   "name": "leonardo.wtf-astro",
   "type": "module",
   "version": "0.0.1",
+  "engines": {
+    "node": "24.x"
+  },
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "postinstall": "npx puppeteer browsers install chrome",
+    "postinstall": "node scripts/postinstall.mjs",
     "generate:cv": "node cv/generate.mjs",
     "build": "npm run generate:cv && astro check && astro build",
     "preview": "astro preview",
@@ -31,10 +34,12 @@
     "typescript": "^5.9.3"
   },
   "devDependencies": {
+    "@sparticuz/chromium": "^143.0.0",
     "handlebars": "^4.7.9",
     "js-yaml": "^4.1.1",
     "prettier": "^3.8.3",
     "prettier-plugin-astro": "^0.14.1",
-    "puppeteer": "^24.43.1"
+    "puppeteer": "^24.43.1",
+    "puppeteer-core": "^24.43.1"
   }
 }

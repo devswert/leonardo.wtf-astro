@@ -6,6 +6,7 @@ tools:
   - "react"
   - "typescript"
   - "postgresql"
-  - "node"
+  - "laravel"
+  - "redis"
 order: 7
 ---

@@ -2,6 +2,7 @@
 company: HealthAtom
 tools:
   - "php"
+  - "python"
   - "js"
   - "react"
   - "mysql"

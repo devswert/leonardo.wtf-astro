@@ -96,7 +96,7 @@ export const ui = {
     // No tech things Section
     "noTechThings.title": "!(No) tech things",
     "noTechThings.firstParagraph":
-      "I live with my partner, my little princess (my daughter), 3 bunnies, and 2 cockatiels. It's a beautiful family, even though it sometimes feels like a zoo. For a few years, I volunteered at an animal rescue NGO, and spending my time helping animals was something truly meaningful. I hope to be able to help another NGO again sometime in the future. I'm in love with a good cup of coffee made with a V60 and high-quality beans. Sometimes I play card games with friends, like Magic or Mitos y Leyendas, and with my partner, we enjoy playing Overcooked 2 at the end of the day — we absolutely love that game.",
+      "I live with my wife, our daughter, four bunnies, and two cockatiels—lovely chaos most days. I used to volunteer at an animal rescue NGO and hope to do that again. Off the clock: V60 coffee, card nights (Magic, Mitos y Leyendas), Overcooked 2 or Crossy Road Castle with my family.",
 
     // Footer Section
     "footer.message": "{coded} with {love}",
@@ -196,7 +196,7 @@ export const ui = {
     // No tech things Section
     "noTechThings.title": "Cositas !(No) tech",
     "noTechThings.firstParagraph":
-      "Vivo con mi pareja, mi pequeña princesa (mi hija), 3 conejitos, y 2 cacatúas ninfa. Es una hermosa familia, incluso cuando a veces parece un zoo. Por algunos años, fuí voluntario en una ONG de rescate de animales, pasar mi tiempo ayudando animales fué algo significativo, y espero poder volver a ayudar a otra ONG en algún momento. Me enamora una buena taza de café hecha con una V60 y unos buenos granos. A veces juego cartas con amigos, como Magic o Mitos y Leyendas, y con mi pareja jugamos Overcooked 2 al final del día, amamos ese juego.",
+      "Vivo con mi esposa, nuestra hija, cuatro conejitos y dos cacatúas ninfa: caos bonito casi todos los días. Fui voluntario en una ONG de rescate animal y me gustaría volver a ayudar. Fuera del teclado: café en V60, noches de cartas (Magic, Mitos y Leyendas), Overcooked 2 o Crossy Road Castle con mi familia.",
 
     // Footer Section
     "footer.message": "{coded} with {love}",
